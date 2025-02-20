@@ -1,0 +1,67 @@
+{
+    "name": "CameraControls",
+    "maps": [
+        {
+            "name": "Camera",
+            "id": "1f306285-e6ab-4a09-9df3-349344489ac6",
+            "actions": [
+                {
+                    "name": "Move",
+                    "type": "Button",
+                    "id": "2ebb6085-e84e-4223-9542-6e6e952789f9",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "e3c12d1e-d0db-48e5-a559-972792f77c70",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "1D Axis",
+                    "id": "d8bd6ca7-9279-4bdd-97d6-2c29434c8d10",
+                    "path": "1DAxis",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "negative",
+                    "id": "2325c9a4-aaa0-415c-832e-2079f090e757",
+                    "path": "<Keyboard>/leftArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "positive",
+                    "id": "4f4e2ff7-8cee-42ca-8025-5146f3556602",
+                    "path": "<Keyboard>/rightArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
