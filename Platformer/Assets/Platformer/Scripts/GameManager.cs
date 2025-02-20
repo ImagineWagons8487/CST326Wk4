@@ -48,26 +48,26 @@ public class GameManager : MonoBehaviour
             Debug.Log($"Ray hit:{rayHitSomething}");
             if (rayHitSomething && screenHitInfo.transform.gameObject.CompareTag("Brick"))
             {
-                Debug.Log("brick");
-                // Destroy(screenHitInfo.transform.gameObject);
-                // points += 10;
-                // pointText.text = $"Points:\n{points}";
+                // Debug.Log("brick");
+                Destroy(screenHitInfo.transform.gameObject);
+                points += 10;
+                pointText.text = $"Points:\n{points}";
             }
             else if (rayHitSomething && screenHitInfo.transform.gameObject.CompareTag("QuestionBlock"))
             {
-                Debug.Log("QB");
-                // StartCoroutine(coinGetAnimation(screenHitInfo.transform));
-                // ++coinCount;
-                // if (coinCount < 10)
-                // {
-                //     coinText.text = $"x0{coinCount}";
-                // }
-                // else
-                // {
-                //     coinText.text = $"x{coinCount}";
-                // }
-                // screenHitInfo.transform.gameObject.GetComponent<Renderer>().material = disabledQuestionMaterial;
-                // screenHitInfo.transform.gameObject.tag = "Stone";
+                // Debug.Log("QB");
+                StartCoroutine(coinGetAnimation(screenHitInfo.transform));
+                ++coinCount;
+                if (coinCount < 10)
+                {
+                    coinText.text = $"x0{coinCount}";
+                }
+                else
+                {
+                    coinText.text = $"x{coinCount}";
+                }
+                screenHitInfo.transform.gameObject.GetComponent<Renderer>().material = disabledQuestionMaterial;
+                screenHitInfo.transform.gameObject.tag = "Stone";
             }
             else if (rayHitSomething)
             {

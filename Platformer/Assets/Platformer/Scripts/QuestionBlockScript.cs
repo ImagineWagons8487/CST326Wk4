@@ -13,7 +13,7 @@ public class QuestionBlockScript : MonoBehaviour
     void Update()
     {
         t += Time.deltaTime;
-        if (t >= .15f)
+        if (t >= .15f && gameObject.CompareTag("QuestionBlock"))
         {
             Vector2 offset = GetComponent<Renderer>().material.mainTextureOffset;
             offset = new Vector2(offset.x, offset.y - .2f);
