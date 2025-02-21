@@ -12,7 +12,7 @@ public class CharacterController : MonoBehaviour
     public float maxSpeed = 10f;
     public float jumpImpulse = 8f;
     public float jumpBoostForce = 8f;
-
+    public Animator animator;
     [Header("Debug Stuff")] public bool isGrounded;
     
     private Rigidbody rb;
@@ -20,12 +20,14 @@ public class CharacterController : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        UpdateAnimation();
         // rb.linearVelocity += Vector3.right * horizontalAmount; //adds {-1, 1} to Vector3.right and adds it to rb.linearVelocity
         //not time-based, adds that value every frame, causes problems between differing frame rates, instead use Time.deltaTime
         rb.linearVelocity += Vector3.right * (horizontalAmount * Time.deltaTime * acceleration);
@@ -77,5 +79,11 @@ public class CharacterController : MonoBehaviour
     public void OnMovePlayer(InputAction.CallbackContext context)
     {
         horizontalAmount = context.ReadValue<float>();
+    }
+
+    void UpdateAnimation()
+    {
+        animator.SetFloat("Speed", Mathf.Abs(rb.linearVelocity.x));
+        animator.SetBool("InAir", !isGrounded);
     }
 }
