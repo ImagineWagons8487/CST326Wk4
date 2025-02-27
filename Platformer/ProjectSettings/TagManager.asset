@@ -8,6 +8,9 @@ TagManager:
   - QuestionBlock
   - Rock
   - Stone
+  - Mario
+  - Lava
+  - Goal
   layers:
   - Default
   - TransparentFX
